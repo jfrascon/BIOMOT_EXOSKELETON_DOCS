@@ -1,0 +1,19 @@
+﻿+-------------+----------+-----------------------+
+|   JOINT     | JOINT ID | OPT ENC SWAP CHANNELS |
++-------------+----------+-----------------------+
+| LEFT HIP    |     32   |          XX           |
++-------------+----------+-----------------------+
+| LEFT KNEE   |     64   |          NO           |
++-------------+----------+-----------------------+
+| LEFT ANKLE  |     96   |          NO           |
++-------------+----------+-----------------------+
+| RIGHT HIP   |    128   |          SI           |
++-------------+----------+-----------------------+
+| RIGHT KNEE  |    160   |          NO           |
++-------------+----------+-----------------------+
+| RIGHT ANKLE |    192   |          SI           |
++-------------+----------+-----------------------+
+
+El sensor magnético no tiene opción de SWAP como el sensor óptico, así que la única manera de invertir el signo para un sentido de rotación dado es mediante una multiplicación por -1.
+Si en el encoder magnético el sentido de giro no está acompañado del signo adecuado, multiplicar por -1 el resultado obtenido tras el truncamiento entre [-pi, pi].
+
